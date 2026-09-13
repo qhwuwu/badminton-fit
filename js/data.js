@@ -139,6 +139,15 @@ window.BMF.data.exercises = [
     note: '从空杆或最轻重量开始；搭配掌心向下的反握练更平衡' },
 
   // ===================== 臀腿 · 步伐 =====================
+  { id: 'l-squat-1', name: '自重深蹲', track: 'legs', equip: ['none'],
+    type: 'reps', sets: 3, workSec: 55, restSec: 45, reps: 18, level: 1,
+    cues: ['双脚与肩同宽或略宽，脚尖外展约 15°，双手前平举配平',
+      '臀部向后下坐，蹲到大腿至少与地面平行（约 90°）',
+      '膝盖方向始终对准脚尖不内扣，重心压在足弓中段',
+      '下蹲 2 秒吸气，站起 1 秒呼气，全程背部挺直不弓腰'],
+    mistakes: '膝盖内扣；重心跑到脚尖、脚跟离地',
+    value: '→ 臀腿基础力量是一切步伐的原点：启动、蹬转、跨步都靠它' },
+
   { id: 'l-barbell-squat', name: '杠铃深蹲（背蹲）', track: 'legs', equip: ['barbell'],
     type: 'reps', sets: 4, workSec: 45, restSec: 90, reps: 8, level: 2,
     cues: ['杠铃置于斜方肌上沿（高杆位），双手略宽于肩、肘下压把杠「压」在背上',
@@ -159,6 +168,16 @@ window.BMF.data.exercises = [
     value: '→ 腘绳肌离心力量是急停制动的「刹车片」，后场被动转身全靠它',
     note: '先用空杆找「臀部后推」的铰链感，再加重量' },
 
+  { id: 'l-bridge-6', name: '臀桥（进阶：单腿臀桥）', track: 'legs', equip: ['none'],
+    type: 'reps', sets: 3, workSec: 45, restSec: 45, reps: 15, level: 1,
+    cues: ['仰卧屈膝，脚跟踩地与肩同宽，脚跟距臀部约一拳',
+      '臀部发力将髋顶起，肩-髋-膝呈一条直线',
+      '最高点收紧臀部停 2 秒，用臀发力而不是腰顶',
+      '顶起呼气，下放时上背先落、臀后落'],
+    mistakes: '腰部代偿顶髋后腰酸；双脚离臀太远变成腘绳肌主导',
+    value: '→ 激活沉睡的臀肌，纠正「用腰打球用腰走路」的体态隐患',
+    note: '单腿臀桥为进阶版：力量上来后改为每侧 10 次' },
+
   { id: 'l-barbell-hipthrust', name: '杠铃臀推', track: 'legs', equip: ['barbell'],
     type: 'reps', sets: 3, workSec: 40, restSec: 90, reps: 12, level: 2,
     cues: ['上背靠稳凳沿，杠铃置于髋部褶皱处（垫毛巾或垫圈防压）',
@@ -177,6 +196,15 @@ window.BMF.data.exercises = [
       '下蹲 2 秒吸气，站起呼气，铃始终贴身'],
     mistakes: '铃离身导致重心前倾；蹲到一半就起',
     value: '→ 负重蹲强化股四头与臀，杀球起跳和低重心接杀更有底' },
+
+  { id: 'l-lunge-3', name: '箭步蹲（前后交替）', track: 'legs', equip: ['none'],
+    type: 'reps', sets: 3, workSec: 50, restSec: 60, reps: 16, level: 2,
+    cues: ['向前迈一大步，前小腿垂直地面，后脚跟抬起',
+      '下蹲到前膝约 90°、后膝接近地面但不触地',
+      '躯干直立微前倾，前脚全掌+后脚前掌发力蹬回',
+      '左右交替各 8 次，蹬地收回时呼气'],
+    mistakes: '迈步太小导致膝盖超过脚尖过多；上身左右摇晃',
+    value: '→ 单腿发力的蹬伸模式，直接迁移到上网蹬跨与后退转身' },
 
   { id: 'l-walking-lunge', name: '哑铃行走箭步蹲', track: 'legs', equip: ['dumbbell'],
     type: 'reps', sets: 3, workSec: 50, restSec: 75, reps: 12, level: 2,
@@ -197,6 +225,15 @@ window.BMF.data.exercises = [
     mistakes: '后撤步太小蹲不下去；起身时上身前扑变成「爬起来」',
     value: '→ 后撤蹬地=被假动作骗了重心后的二次启动，且比前跨膝盖压力更小',
     note: '平衡不稳先用哑铃版找感觉，稳了再上杠' },
+
+  { id: 'l-side-lunge-4', name: '侧向箭步蹲', track: 'legs', equip: ['none'],
+    type: 'reps', sets: 3, workSec: 40, restSec: 60, reps: 12, level: 2,
+    cues: ['向侧面跨出一大步，臀部向后坐向侧方',
+      '弯曲腿膝盖对准脚尖，另一条腿伸直、全脚掌贴地',
+      '感受大腿内侧与臀部的拉伸后发力，像侧向跨步救球',
+      '重心压低后蹬地收回，左右各 6 次，蹬出呼气'],
+    mistakes: '只弯腿不下坐臀部；脚尖朝内膝盖内扣',
+    value: '→ 对应左右两侧接杀/接吊的跨步模式，边线球不再是软肋' },
 
   { id: 'l-loaded-side-lunge', name: '负重侧向箭步蹲（哑铃）', track: 'legs', equip: ['dumbbell'],
     type: 'reps', sets: 3, workSec: 45, restSec: 60, reps: 10, level: 2,
@@ -237,6 +274,15 @@ window.BMF.data.exercises = [
     mistakes: '靠腰反弓代偿顶高；悬空腿借摆动惯性甩上去',
     value: '→ 单臀发力+骨盆抗旋转，专治两腿力量差（弱侧正是容易受伤的一侧）',
     note: '先练弱侧，次数以弱侧能标准完成为准' },
+
+  { id: 'l-wall-sit-9', name: '靠墙静蹲', track: 'legs', equip: ['none'],
+    type: 'timed', sets: 3, workSec: 45, restSec: 45, reps: 0, level: 1,
+    cues: ['背贴墙下滑，大腿与地面约 45-60°，膝盖不超过脚尖',
+      '膝盖与脚尖同方向，双脚与肩同宽踩实',
+      '全程正常呼吸不憋气，忍受大腿持续发酸',
+      '时间到扶墙慢慢站起，不要猛起身防头晕'],
+    mistakes: '手撑大腿偷力；蹲得太浅没有训练效果',
+    value: '→ 等长力量打底，多拍对峙中低重心维持能力的关键' },
 
   { id: 'l-jump-squat-7', name: '跳蹲', track: 'legs', equip: ['none'],
     type: 'reps', sets: 3, workSec: 30, restSec: 60, reps: 10, level: 3,
@@ -549,16 +595,16 @@ window.BMF.data.weekTemplate = [
 window.BMF.data.eightWeek = [
   { week: 1, phase: '适应期', level: 1,
     sessions: [
-      { focus: ['legs'], note: '哑铃高脚杯深蹲（轻）+负重登箱+单腿提踵，轻负重先学动作' },
+      { focus: ['legs'], note: '自重深蹲+臀桥+提踵，零负重先学动作' },
       { focus: ['cardio'], note: '无绳空跳间歇 4 轮，能说话的强度' },
       { focus: ['wrist', 'backhand'], note: '徒手扇扇子+床上打拍+对镜反手分解，全程轻' },
-      { focus: ['legs', 'cardio'], note: '哑铃登箱+开合跳，总量打七折' }
+      { focus: ['legs', 'cardio'], note: '靠墙静蹲+开合跳，总量打七折' }
     ],
     note: '第 1 周轻量适应不追求疲劳：动作标准、组间充分休息，练后第二天不酸痛为合格线。' },
 
   { week: 2, phase: '适应期', level: 1,
     sessions: [
-      { focus: ['legs'], note: '高脚杯深蹲次数+2，加入负重侧向箭步蹲体会重心' },
+      { focus: ['legs'], note: '深蹲次数+2，加入侧向箭步蹲体会重心' },
       { focus: ['cardio'], note: '跳绳慢摇过渡到 30 快 30 慢间歇 4 轮' },
       { focus: ['wrist', 'backhand'], note: '加入毛巾拧绞；反手分解从 5 组加到完整节奏' },
       { focus: ['legs', 'cardio'], note: '侧滑步触地 20 秒×2 + 登山跑，感受低重心' }
