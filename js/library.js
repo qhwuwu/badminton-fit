@@ -279,4 +279,6 @@ window.BMF = window.BMF || {};
 
   /* ---------- 注册 ---------- */
   BMF.registerPage('library', renderLibrary);
+  /* 暴露详情弹窗：制定页/今日页点击动作名查看详解（无需切到动作库） */
+  BMF.showExerciseDetail = showDetail;
 })();

@@ -4,24 +4,24 @@
    - 在线时始终取最新文件并回填缓存（个人应用频繁改动，避免旧版缓存卡死）
    - 离线时回退缓存，保证主屏图标离线可用
    ===================================================== */
-const CACHE = 'bmf-v2';
+const CACHE = 'bmf-v3';
 
 // 预缓存清单（与 index.html 引用保持一致，含版本号参数）
 const ASSETS = [
   './',
   './index.html',
   './manifest.json',
-  './css/style.css?v=1',
-  './js/store.js?v=1',
-  './js/data.js?v=1',
-  './js/app.js?v=1',
-  './js/planner.js?v=1',
-  './js/library.js?v=1',
-  './js/player.js?v=1',
-  './js/sync.js?v=1',
-  './js/progress.js?v=1',
-  './js/vendor/qrcode.min.js?v=1',
-  './js/vendor/jsqr.min.js?v=1'
+  './css/style.css?v=2',
+  './js/store.js?v=2',
+  './js/data.js?v=2',
+  './js/app.js?v=2',
+  './js/planner.js?v=2',
+  './js/library.js?v=2',
+  './js/player.js?v=2',
+  './js/sync.js?v=2',
+  './js/progress.js?v=2',
+  './js/vendor/qrcode.min.js?v=2',
+  './js/vendor/jsqr.min.js?v=2'
 ];
 
 /* 安装：逐个 cache.add 并容错（jsqr.min.js 等个别文件缺失时不会导致整体失败） */

@@ -38,6 +38,10 @@ window.BMF = window.BMF || {};
     '.pl-modal-list{margin-top:4px;max-height:44vh;overflow-y:auto;}',
     '.pl-pick-row{cursor:pointer;min-height:48px;}',
     '.pl-pick-row:active{background:var(--surface2);border-radius:10px;}',
+    /* 动作名可点击查看详解（点虚线 = 可点） */
+    '.pl-name-link{cursor:pointer;text-decoration:underline dotted;text-underline-offset:3px;-webkit-tap-highlight-color:transparent;}',
+    '.pl-info-ico{flex-shrink:0;width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-style:italic;color:var(--text-dim);border:1px solid var(--border);border-radius:50%;cursor:pointer;}',
+    '.pl-info-btn{flex-shrink:0;align-self:center;border:1px solid var(--border);background:transparent;color:var(--text-dim);font-size:12px;border-radius:999px;padding:6px 12px;cursor:pointer;}',
     /* 今日页 */
     '.td-date{font-size:22px;font-weight:800;}',
     '.td-week{font-size:13px;color:var(--text-dim);margin-top:2px;}',
@@ -99,6 +103,32 @@ window.BMF = window.BMF || {};
     return d.getFullYear() + '-' + pad2(d.getMonth() + 1) + '-' + pad2(d.getDate());
   }
   function exercises() { return BMF.data.exercises || []; }
+
+  /** 动作名（可点击查看详解；ex 为空时降级为暗色纯文本） */
+  function nameLink(ex, cls, fallbackText) {
+    if (!ex) {
+      const s = el('span', cls + ' text-dim');
+      s.textContent = fallbackText;
+      return s;
+    }
+    const s = el('span', cls + ' pl-name-link');
+    s.textContent = ex.name;
+    s.setAttribute('role', 'button');
+    s.setAttribute('aria-label', '查看「' + ex.name + '」动作详解');
+    s.addEventListener('click', function () { BMF.showExerciseDetail(ex); });
+    return s;
+  }
+
+  /** 「ⓘ」小圆标（与动作名同效，点击弹详解） */
+  function infoIcon(ex) {
+    const ico = el('span', 'pl-info-ico');
+    ico.textContent = 'i';
+    ico.setAttribute('role', 'button');
+    ico.setAttribute('aria-label', '查看「' + ex.name + '」动作详解');
+    ico.addEventListener('click', function () { BMF.showExerciseDetail(ex); });
+    return ico;
+  }
+
   function tracks() { return BMF.data.tracks || {}; }
   function findEx(id) {
     return exercises().find(function (e) { return e.id === id; }) || null;
@@ -489,11 +519,8 @@ window.BMF = window.BMF || {};
     const main = el('div', 'li-main');
 
     const line = el('div', 'pl-item-line');
-    const name = el('span', 'li-title');
-    name.textContent = ex ? ex.name : '未知动作（' + it.exId + '）';
-    if (!ex) name.className = 'li-title text-dim';
-    line.appendChild(name);
-    if (ex) line.appendChild(trackBadge(ex.track));
+    line.appendChild(nameLink(ex, 'li-title', '未知动作（' + it.exId + '）'));
+    if (ex) { line.appendChild(trackBadge(ex.track)); line.appendChild(infoIcon(ex)); }
     main.appendChild(line);
 
     if (ex) {
@@ -664,6 +691,17 @@ window.BMF = window.BMF || {};
         sub.textContent = summaryText(ex, ex);
         main.append(line, sub);
         row.appendChild(main);
+
+        // 「详解」按钮：只看详情不添加（阻止冒泡，避免误触发整行的点选添加）
+        const info = el('button', 'pl-info-btn');
+        info.type = 'button';
+        info.textContent = '详解';
+        info.setAttribute('aria-label', '查看「' + ex.name + '」动作详解');
+        info.addEventListener('click', function (e) {
+          e.stopPropagation();
+          BMF.showExerciseDetail(ex);
+        });
+        row.appendChild(info);
 
         // 已在草稿中的动作打标记
         if (_draft && _draft.items.some(function (it) { return it.exId === ex.id; })) {
@@ -893,11 +931,10 @@ window.BMF = window.BMF || {};
       items.forEach(function (it) {
         const ex = findEx(it.exId);
         const row = el('div', 'td-item-row');
-        const name = el('span', 'td-item-name');
-        name.textContent = ex ? ex.name : it.exId;
+        row.appendChild(nameLink(ex, 'td-item-name', it.exId));
         const sum = el('span', 'td-item-sum');
         sum.textContent = ex ? summaryText(ex, it) : '';
-        row.append(name, sum);
+        row.appendChild(sum);
         card.appendChild(row);
       });
     });
