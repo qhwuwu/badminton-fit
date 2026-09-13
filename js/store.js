@@ -17,7 +17,7 @@ window.BMF = window.BMF || {};
   // 设置默认值
   const DEFAULT_SETTINGS = {
     theme: 'dark',
-    userEquip: { none: 1, weight: 1, dumbbell: 1, rope: 1, racket: 1, bed: 1, towel: 1, court: 0 }
+    userEquip: { none: 1, weight: 1, dumbbell: 1, barbell: 1, rope: 1, racket: 1, bed: 1, towel: 1, court: 0 }
   };
 
   /** 安全读取：解析失败或不存在时返回 fallback */

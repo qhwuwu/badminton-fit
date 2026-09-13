@@ -70,10 +70,10 @@ window.BMF = window.BMF || {};
 
   /* ---------- 常量 ---------- */
   const EQUIP_NAMES = {
-    none: '徒手', dumbbell: '哑铃', weight: '重物', rope: '跳绳',
+    none: '徒手', dumbbell: '哑铃', barbell: '杠铃', weight: '重物', rope: '跳绳',
     racket: '球拍', towel: '毛巾', bed: '床上', court: '场地'
   };
-  const EQUIP_KEYS = ['dumbbell', 'weight', 'rope', 'racket', 'towel', 'bed', 'court']; // 参数卡可开关（none 恒可用）
+  const EQUIP_KEYS = ['dumbbell', 'barbell', 'weight', 'rope', 'racket', 'towel', 'bed', 'court']; // 参数卡可开关（none 恒可用）
   const FOCUS_KEYS = ['wrist', 'legs', 'cardio', 'backhand'];
   const TRACK_ALL = ['wrist', 'legs', 'cardio', 'backhand', 'warmup', 'cooldown'];
   const WEEKDAYS = ['日', '一', '二', '三', '四', '五', '六'];

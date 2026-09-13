@@ -35,9 +35,9 @@ window.BMF = window.BMF || {};
 
   /* ---------- 常量 ---------- */
   const TRACK_ORDER = ['wrist', 'legs', 'cardio', 'backhand', 'warmup', 'cooldown'];
-  const EQUIP_ORDER = ['none', 'dumbbell', 'weight', 'rope', 'racket', 'towel', 'bed', 'court'];
+  const EQUIP_ORDER = ['none', 'dumbbell', 'barbell', 'weight', 'rope', 'racket', 'towel', 'bed', 'court'];
   const EQUIP_NAMES = {
-    none: '徒手', dumbbell: '哑铃', weight: '重物', rope: '跳绳',
+    none: '徒手', dumbbell: '哑铃', barbell: '杠铃', weight: '重物', rope: '跳绳',
     racket: '球拍', towel: '毛巾', bed: '床上', court: '场地'
   };
   // 难度徽章配色：L1 绿 / L2 橙 / L3 红（浅色底 + 深色字，深浅主题均可用）
